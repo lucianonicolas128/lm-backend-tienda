@@ -6,7 +6,13 @@ var Schema = mongoose.Schema;
 var PreferencesSchema = Schema({
 	nameCommerce: String,
 	descriptionCommerce: String,
-	imageLogo: String,
+	
+	nameBankAccount: String,
+	CBUBank: Number,
+	boxTypeBank: String,
+
+	terminosYCondiciones: String,
+
 	phoneContact: String,
 	emailContact: String,
 	ubicationContact: String,
