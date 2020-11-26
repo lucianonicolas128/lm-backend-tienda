@@ -19,6 +19,7 @@ var controller = {
         product.offer = params.offer;
         product.stock = params.stock;
         product.image = params.image;
+        product.imageAlt = params.imageAlt;
         product.stockTalles = params.stockTalles;
         product.featured = params.featured;
 

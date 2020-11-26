@@ -11,6 +11,7 @@ var ProductSchema = Schema({
     price: Number,
     offer: Number,
     image: String,
+    imageAlt: String,
     stock: Number,
     stockTalles: String,
     featured: Boolean
