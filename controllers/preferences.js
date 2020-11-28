@@ -15,6 +15,7 @@ var controller = {
         preferences.nameBankAccount = params.nameBankAccount;
         preferences.CBUBank = preferences.CBUBank;
         preferences.boxTypeBank = params.boxTypeBank;
+        preferences.nameBank = params.nameBank;
 
         preferences.terminosYCondiciones = params.terminosYCondiciones;
 

@@ -10,6 +10,7 @@ var PreferencesSchema = Schema({
 	nameBankAccount: String,
 	CBUBank: Number,
 	boxTypeBank: String,
+	nameBank: String,
 
 	terminosYCondiciones: String,
 
