@@ -14,7 +14,8 @@ var ProductSchema = Schema({
     imageAlt: String,
     stock: Number,
     stockTalles: String,
-    featured: Boolean
+    featured: Boolean,
+    activated: Boolean
 });
 
 module.exports = mongoose.model('Product', ProductSchema);

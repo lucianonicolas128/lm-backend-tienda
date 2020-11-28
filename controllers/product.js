@@ -22,6 +22,7 @@ var controller = {
         product.imageAlt = params.imageAlt;
         product.stockTalles = params.stockTalles;
         product.featured = params.featured;
+        product.activated = params.activated;
 
         product.save((err, productStored) => {
             if (err) return res.status(500).send({ message: 'Error al guardar el producto.' })
