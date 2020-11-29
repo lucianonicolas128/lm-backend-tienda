@@ -70,6 +70,29 @@ var controller = {
             });
         });
     },
+    
+    uploadImage: function async (req, res) {
+
+        var sliderId = req.params.id;
+        var fileName = 'Imagen no subida...';
+        var file_path = req.file.path;
+        var file_split = file_path.split('\\');
+        var file_name = file_split[2];
+
+        Slider.findByIdAndUpdate(sliderId, { image: file_path }, {new: true}, (err, sliderUpdated) => {
+            if(err) return res.status(500).send({message: 'La imagen no se ha subido'});
+            
+            if(!sliderUpdated){        
+                res.status(404).send({message: 'No se ha podido actualizar el album'});
+            }
+
+            sliderUpdated.image = file_path;
+            return res.status(200).send({
+                slider: sliderUpdated
+            });
+            }
+        )
+    }
 
 }
 
