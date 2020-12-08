@@ -3,9 +3,9 @@
 // imports & requires
 var express = require('express');
 var SliderController = require('../controllers/slider');
-var routerSlider = express.Router();
 require('../cloudinary.config');
 var upload = require('../multer');
+var routerSlider = express.Router();
 
 // routes
 routerSlider.post('/save-slider', SliderController.saveSlider);

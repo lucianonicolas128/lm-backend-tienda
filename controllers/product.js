@@ -3,6 +3,7 @@
 var Product = require('../models/product');
 // var fs = require('fs');
 var path = require('path');
+const product = require('../models/product');
 
 var controller = {
 
@@ -47,6 +48,19 @@ var controller = {
             if (err) return res.status(500).send({ message: 'Error al devolver los datos' });
             if (!products) return res.status(404).send({ message: 'No hay productos para mostrar' });
             return res.status(200).send({ products });
+        })
+    },
+
+    getProductsCategory: function  (req, res) {
+        var productCategory = req.params.category;
+        if (productCategory === null) return res.status(404).send({ message: 'No se encuentra la categoria'});
+        
+        
+        Product.find({}).sort('-product').exec((err, products) => {
+            if (err) return res.status(500).send({ message: 'Error al devolver los datos' });
+            if (!products) return res.status(404).send({ message: 'No hay productos para mostrar' });
+            let productos = products.filter(product => product.category === productCategory);
+            return res.status(200).send({ productos });
         })
     },
 
